@@ -7,7 +7,7 @@ const renderNotes = () => {
   const filters = getFilters();
   const notes = sortNotes(filters.sortBy);
   notesEl.innerHTML = "";
-  const filterNotes = notes.filter((val) =>
+  const filterNotes = notes?.filter((val) =>
     val.title.toLowerCase().includes(filters.searchText.toLowerCase())
   );
   notesEl.innerHTML = "";
@@ -59,4 +59,4 @@ const initializeEditPage = (id) => {
   dateElement.textContent = generateLastEdited(note.updateDate);
 };
 
-export { generateLastEdited, generateTodoDOM, renderNotes,initializeEditPage };
+export { generateLastEdited, generateTodoDOM, renderNotes, initializeEditPage };

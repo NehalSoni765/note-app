@@ -90,8 +90,9 @@ var removeNotes = function removeNotes(uuid) {
 };
 var sortNotes = function sortNotes(sortBy) {
   if (sortBy === "byEdited") {
+    var _notes;
     //desc
-    return notes.sort(function (a, b) {
+    return (_notes = notes) === null || _notes === void 0 ? void 0 : _notes.sort(function (a, b) {
       if (a.updateDate < b.updateDate) {
         return 1;
       } else if (a.updateDate > b.updateDate) {
@@ -101,8 +102,9 @@ var sortNotes = function sortNotes(sortBy) {
       }
     });
   } else if (sortBy === "byCreated") {
+    var _notes2;
     //ascen
-    return notes.sort(function (a, b) {
+    return (_notes2 = notes) === null || _notes2 === void 0 ? void 0 : _notes2.sort(function (a, b) {
       if (a.createDate < b.createDate) {
         return -1;
       } else if (a.createDate > b.createDate) {
@@ -112,7 +114,8 @@ var sortNotes = function sortNotes(sortBy) {
       }
     });
   } else {
-    return notes.sort(function (a, b) {
+    var _notes3;
+    return (_notes3 = notes) === null || _notes3 === void 0 ? void 0 : _notes3.sort(function (a, b) {
       if (a.title.toLowerCase() < b.title.toLowerCase()) {
         return -1;
       } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
@@ -170,7 +173,7 @@ var renderNotes = function renderNotes() {
   var filters = (0,_filters__WEBPACK_IMPORTED_MODULE_2__.getFilters)();
   var notes = (0,_notes__WEBPACK_IMPORTED_MODULE_1__.sortNotes)(filters.sortBy);
   notesEl.innerHTML = "";
-  var filterNotes = notes.filter(function (val) {
+  var filterNotes = notes === null || notes === void 0 ? void 0 : notes.filter(function (val) {
     return val.title.toLowerCase().includes(filters.searchText.toLowerCase());
   });
   notesEl.innerHTML = "";
