@@ -72,7 +72,7 @@ var createNote = function createNote() {
     uuid: uuid,
     createDate: timestamp,
     updateDate: timestamp
-  });
+  }) || [];
   saveNotes();
   return uuid;
 };
@@ -90,7 +90,7 @@ var removeNotes = function removeNotes(uuid) {
 };
 var sortNotes = function sortNotes(sortBy) {
   if (sortBy === "byEdited") {
-    //desc 
+    //desc
     return notes.sort(function (a, b) {
       if (a.updateDate < b.updateDate) {
         return 1;
@@ -112,7 +112,6 @@ var sortNotes = function sortNotes(sortBy) {
       }
     });
   } else {
-    console.log("3");
     return notes.sort(function (a, b) {
       if (a.title.toLowerCase() < b.title.toLowerCase()) {
         return -1;
@@ -32832,7 +32831,6 @@ document.querySelector("#search-text").addEventListener("input", function (e) {
   (0,_view__WEBPACK_IMPORTED_MODULE_2__.renderNotes)();
 });
 document.querySelector("#filter-by").addEventListener("change", function (e) {
-  console.log("e ", e.target.value);
   (0,_filters__WEBPACK_IMPORTED_MODULE_1__.setFilters)({
     sortBy: e.target.value
   });

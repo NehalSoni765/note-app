@@ -19,7 +19,7 @@ const createNote = () => {
     uuid: uuid,
     createDate: timestamp,
     updateDate: timestamp,
-  });
+  }) || [];
   saveNotes();
   return uuid;
 };
@@ -34,7 +34,8 @@ const removeNotes = (uuid) => {
 };
 
 const sortNotes = (sortBy) => {
-  if (sortBy === "byEdited") {//desc 
+  if (sortBy === "byEdited") {
+    //desc
     return notes.sort(function (a, b) {
       if (a.updateDate < b.updateDate) {
         return 1;
@@ -44,7 +45,8 @@ const sortNotes = (sortBy) => {
         return 0;
       }
     });
-  } else if (sortBy === "byCreated") {//ascen
+  } else if (sortBy === "byCreated") {
+    //ascen
     return notes.sort(function (a, b) {
       if (a.createDate < b.createDate) {
         return -1;
@@ -55,7 +57,6 @@ const sortNotes = (sortBy) => {
       }
     });
   } else {
-    console.log("3");
     return notes.sort(function (a, b) {
       if (a.title.toLowerCase() < b.title.toLowerCase()) {
         return -1;

@@ -17,7 +17,6 @@ document.querySelector("#search-text").addEventListener("input", function (e) {
   renderNotes();
 });
 document.querySelector("#filter-by").addEventListener("change", function (e) {
-  console.log("e ",e.target.value);
   setFilters({
     sortBy: e.target.value,
   });
