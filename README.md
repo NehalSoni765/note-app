@@ -14,7 +14,7 @@ This is a simple web-based note-taking application that allows users to create, 
 ## Project Links
 
 - [GitHub Repository](https://github.com/NehalSoni765/note-app)
-- [Live Demo](https://note-appv1.netlify.app)
+- [Live Demo](https://notememomaster.netlify.app/)
 
 ## Usage
 
@@ -53,10 +53,8 @@ If you want to run the app locally or make changes to the code:
    npm install
 4. Start the development server:
    ```bash
-   npm run dev-server
-5. Go to public folder.
-6. Right click on index.html file and selecting `open to live server`
-7. Open the browser and play the game.
+   npm run start
+7. Open the browser https://localhost:3000.
 
 ## Contributing
 - If you'd like to contribute to this project, please follow these steps:
