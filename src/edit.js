@@ -1,5 +1,5 @@
 import { removeNotes, saveNotes, updateNotes } from "./notes";
-import { initializeEditPage } from "./view";
+import { generateLastEdited, initializeEditPage } from "./view";
 
 const dateElement = document.querySelector("#last-edited");
 const titleElem = document.querySelector("#todo-title");

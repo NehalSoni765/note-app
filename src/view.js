@@ -11,7 +11,7 @@ const renderNotes = () => {
     val.title.toLowerCase().includes(filters.searchText.toLowerCase())
   );
   notesEl.innerHTML = "";
-  if (filterNotes.length > 0) {
+  if (filterNotes?.length > 0) {
     filterNotes.forEach((val) => notesEl.appendChild(generateTodoDOM(val)));
   } else {
     const emptyMessage = document.createElement("p");

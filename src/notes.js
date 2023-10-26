@@ -4,10 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 let notes = [];
 const loadNotes = () => {
   const noteJson = localStorage.getItem("notes");
-  if (noteJson) {
-    return JSON.parse(noteJson) || [];
-  }
+  return noteJson ? JSON.parse(noteJson) : [];
 };
+
 const getNotes = () => notes;
 
 const createNote = () => {
@@ -19,7 +18,7 @@ const createNote = () => {
     uuid: uuid,
     createDate: timestamp,
     updateDate: timestamp,
-  }) || [];
+  });
   saveNotes();
   return uuid;
 };

@@ -24,8 +24,11 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
-    publicPath: "/scripts/",
+    static: path.join(__dirname, "public/"),
+    devMiddleware: {
+      publicPath: "/scripts/",
+    },
+    port: 3000,
   },
   devtool: "source-map", // it converts babel code to our code in browser devtool
 };
