@@ -36,7 +36,7 @@ const removeNotes = (uuid) => {
 const sortNotes = (sortBy) => {
   if (sortBy === "byEdited") {
     //desc
-    return notes.sort(function (a, b) {
+    return notes?.sort(function (a, b) {
       if (a.updateDate < b.updateDate) {
         return 1;
       } else if (a.updateDate > b.updateDate) {
@@ -47,7 +47,7 @@ const sortNotes = (sortBy) => {
     });
   } else if (sortBy === "byCreated") {
     //ascen
-    return notes.sort(function (a, b) {
+    return notes?.sort(function (a, b) {
       if (a.createDate < b.createDate) {
         return -1;
       } else if (a.createDate > b.createDate) {
@@ -57,7 +57,7 @@ const sortNotes = (sortBy) => {
       }
     });
   } else {
-    return notes.sort(function (a, b) {
+    return notes?.sort(function (a, b) {
       if (a.title.toLowerCase() < b.title.toLowerCase()) {
         return -1;
       } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
